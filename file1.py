@@ -1,11 +1,12 @@
-
 import pickle
 import cv2
 import face_recognition
 
+# start the video feed
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
+
 
 # Load the encoding file or database
 print("Loading Encode File ...")
@@ -20,7 +21,8 @@ modeType = 0
 counter = 0
 imageId = -1
 imgStudent = []
-# compare the image and display output
+
+# compare the image from dataset and display output
 while True:
     success, img = cap.read()
 
@@ -29,7 +31,6 @@ while True:
 
     faceCurFrame = face_recognition.face_locations(imgS)
     encodeCurFrame = face_recognition.face_encodings(imgS, faceCurFrame)
-
 
     if faceCurFrame:
         for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
