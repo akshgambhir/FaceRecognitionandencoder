@@ -17,6 +17,7 @@ encodeListKnown, studentIds = encodeListKnownWithIds
 print(studentIds)
 print("Encode File Loaded")
 
+# variable declaration
 modeType = 0
 counter = 0
 imageId = -1
